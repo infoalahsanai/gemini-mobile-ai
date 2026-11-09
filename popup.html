@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Gemini Mobile AI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="brand">
+        <span class="logo">✨</span>
+        <span class="title">Gemini AI</span>
+      </div>
+      <div class="header-actions">
+        <select id="modelPicker" class="model-select">
+          <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+          <option value="gemini-1.5-flash" selected>Gemini 1.5 Flash</option>
+          <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+          <option value="gemini-1.5-flash-8b">Gemini 1.5 Flash-8B</option>
+        </select>
+        <button id="settingsBtn" class="icon-btn" title="API Key সেভ করুন">⚙️</button>
+      </div>
+    </header>
+
+    <main id="chatBox">
+      <div class="welcome" id="welcomeMsg">
+        <h3>Google Gemini Mobile AI</h3>
+        <p>Quetta বা Kiwi ব্রাউজারে এটি সরাসরি এক্সটেনশন হিসেবেও চলে। উপরের ⚙️ আইকনে চাপ দিয়ে আপনার Gemini API Key দিয়ে শুরু করুন।</p>
+      </div>
+    </main>
+
+    <footer>
+      <textarea id="promptInput" rows="1" placeholder="আপনার প্রশ্ন বা কোড রিকোয়েস্ট লিখুন..."></textarea>
+      <button id="sendBtn" class="send-btn">➤</button>
+    </footer>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+      <div class="modal-box">
+        <h3>API Key Settings</h3>
+        <input type="password" id="apiKeyInput" placeholder="আপনার Gemini API Key (AIzaSy...)">
+        
+        <button id="fetchModelsBtn" class="action-btn secondary">🔄 আমার API Key দিয়ে সব মডেল খুঁজুন</button>
+        <div id="statusText" class="status-msg"></div>
+
+        <div class="btn-row">
+          <button id="closeModalBtn" class="action-btn cancel">বন্ধ করুন</button>
+          <button id="saveKeyBtn" class="action-btn primary">সেভ করুন</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
