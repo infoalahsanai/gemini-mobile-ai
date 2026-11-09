@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  max-width: 480px;
+  height: 520px;
+  background: #0b0f19;
+  color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+header {
+  background: #131b2e;
+  border-bottom: 1px solid #283556;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo {
+  font-size: 18px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.model-select {
+  background: #1c2640;
+  color: #f8fafc;
+  border: 1px solid #283556;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 11px;
+  outline: none;
+  max-width: 160px;
+}
+
+.icon-btn {
+  background: #1c2640;
+  border: 1px solid #283556;
+  color: #f8fafc;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+main#chatBox {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.welcome {
+  background: #131b2e;
+  border: 1px solid #283556;
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  margin: auto 0;
+}
+
+.welcome h3 {
+  color: #38bdf8;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.welcome p {
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: #0284c7;
+  color: #fff;
+  border-bottom-right-radius: 2px;
+}
+
+.msg.ai {
+  align-self: flex-start;
+  background: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid #334155;
+  border-bottom-left-radius: 2px;
+}
+
+.msg pre {
+  background: #0d1117;
+  border-radius: 6px;
+  padding: 8px;
+  margin: 6px 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+.msg code {
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.copy-code {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+footer {
+  background: #131b2e;
+  border-top: 1px solid #283556;
+  padding: 8px 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+textarea#promptInput {
+  flex: 1;
+  background: #1c2640;
+  border: 1px solid #283556;
+  border-radius: 10px;
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 13px;
+  min-height: 38px;
+  max-height: 90px;
+  resize: none;
+  outline: none;
+}
+
+.send-btn {
+  background: #38bdf8;
+  color: #0b0f19;
+  border: none;
+  border-radius: 10px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.75);
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  z-index: 50;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-box {
+  background: #131b2e;
+  border: 1px solid #283556;
+  border-radius: 14px;
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-box h3 {
+  font-size: 15px;
+  color: #38bdf8;
+}
+
+.modal-box input {
+  background: #1c2640;
+  border: 1px solid #283556;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: #fff;
+  font-size: 12px;
+  outline: none;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.action-btn.primary {
+  background: #38bdf8;
+  color: #0b0f19;
+}
+
+.action-btn.secondary {
+  background: #334155;
+  color: #38bdf8;
+}
+
+.action-btn.cancel {
+  background: #1c2640;
+  color: #94a3b8;
+}
+
+.status-msg {
+  font-size: 11px;
+}
